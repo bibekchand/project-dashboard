@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+:root {
+  --ash: rgb(223, 223, 223);
+  --white: rgb(255, 255, 255);
+  --dark-blue: #188cc5;
+  --blue: #29b4f9;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template: 0.5fr 1fr 8fr/ 2fr 5.5fr 2.5fr;
+}
+.search-bar {
+  grid-area: 1/2/2/4;
+}
+.profile-bar {
+  grid-area: 2/2/3/4;
+}
+.left-sidebar {
+  grid-area: 3/3/4/4;
+}
+.projects {
+  grid-area: 3/2/4/3;
+}
+.dashboard {
+  grid-area: 1/1/4/2;
+}
+.search-bar {
+  display: flex;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  border: 0 !important;
+  background-color: var(--white) !important;
+  padding-top: 10px;
+  align-self: baseline;
+}
+.search-left {
+  display: flex;
+  gap: 20px;
+  width: 60%;
+  align-items: center;
+}
+.search-left > input {
+  appearance: none;
+  border: 0px;
+  height: 25px;
+  flex: 1;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--ash);
+}
+.search-right {
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+  align-items: center;
+}
+[src="images/magnify.svg"] {
+  position: relative;
+  top: 4px;
+}
+[src="images/cat.avif"] {
+  border-radius: 50%;
+}
+div.profile-bar {
+  padding: 0 40px;
+  background-color: var(--white);
+  border: 0;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.profile-bar .profile-left {
+  font-weight: bolder;
+}
+.profile-right {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-right > button {
+  background-color: var(--dark-blue);
+  width: 100px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 20px;
+  color: var(--white);
+  border: 0px;
+}
+li,
+button {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+li:hover {
+  font-size: 1.13rem;
+  cursor: pointer;
+  width: auto;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+button {
+  transition: 0.5s;
+}
+button:hover {
+  font-size: 1.13rem;
+  cursor: pointer;
+  background-color: black;
+}
+.profile-right {
+  margin-left: auto;
+}
+.dashboard {
+  font-size: 1.145rem;
+  display: grid;
+  grid-template: 1fr 3fr 5fr/1fr;
+  padding-left: 20px;
+  background-color: var(--blue);
+  align-items: baseline;
+  color: var(--white);
+}
+
+.dashboard > .dashboard-general > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboard-general,
+.dashboard-settings {
+  padding-left: 20px;
+}
+.dashboard > .dashboard-settings > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboard img {
+  width: 20px;
+  height: auto;
+  vertical-align: -5px;
+  margin-right: 20px;
+  filter: invert(1);
+}
+
+.dashboard-title {
+  /* align-self: baseline; */
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-title > img {
+  width: 50px;
+  height: 50px;
+}
+.projects {
+  background-color: var(--ash);
+  padding: 20px;
+  box-shadow: 0 2px 0 inset rgb(125, 124, 124);
+}
+.projects > .text {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  height: 200px;
+  position: relative;
+  border-radius: 5px;
+  background-color: var(--white);
+}
+.card > .images {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.card > .images > img {
+  transition: 0.3s;
+}
+.card > .images > img:hover {
+  width: 30px;
+  height: 30px;
+}
+.card:hover {
+  cursor: pointer;
+  box-shadow: -2px 2px 2px rgb(125, 124, 124);
+}
+.card img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+.cards > .card {
+  padding: 20px 30px;
+  padding-bottom: 50px;
+  border-left: thick solid orange;
+}
+.cards > .card > p {
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+.left-sidebar {
+  background-color: var(--ash);
+  box-shadow: 0 2px 0 inset rgb(125, 124, 124);
+  padding-top: 20px;
+  padding-right: 40px;
+}
+.announcements-text,
+.trending-text {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.announcements-card {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 5px;
+  width: 300px;
+}
+.announcements-card > div {
+  padding: 10px;
+  border-bottom: 1px solid var(--ash);
+}
+.announcements-card > div:last-child {
+  border-bottom: 0px;
+}
+.trending-text {
+  margin-top: 20px;
+}
+.trending-card {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 5px;
+  width: 300px;
+}
+.trending-proflie {
+  font-size: 0.8rem;
+  display: flex;
+  gap: 20px;
+}
+.trending-profile > .name > p:first-child {
+  color: white;
+}
+.name p:last-child {
+  color: grey;
+}
+.trending-card {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
